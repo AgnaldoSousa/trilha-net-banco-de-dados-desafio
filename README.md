@@ -1,83 +1,3 @@
-Respostas do Desafio:
-
---1
-SELECT
-     Nome,
-	 Ano,
-From Filmes
-
--- 2
-
-SELECT * FROM FILMES
-ORDER BY Ano
-
--- 3
-
-SELECT 
-         Nome,
-		 Ano,
-		 Duracao 
-FROM FILMES
-WHERE ANO = 1985
-
--- 4
-
-SELECT * FROM Filmes
-WHERE ANO = 1997
-
--- 5
-
-SELECT * FROM Filmes
-WHERE ANO > 2000
-
--- 6
-
-SELECT * FROM Filmes
-WHERE Duracao > 100
-ORDER BY duracao ASC;
-
--- 7 
-
-SELECT ano, COUNT(*)AS Quantidade
-FROM Filmes
-Group BY Ano
-Order by COUNT(*) DESC;
-
--- 8
-
-SELECT* from Atores
-             
-Where Genero = 'M';
-
--- 9 
-
-SELECT PrimeiroNome, UltimoNome
-FROM Atores
-WHERE Genero = 'F'
-ORDER BY PrimeiroNome;
-
--- 10
-
-SELECT Filmes.Nome AS NomeDoFilme, Generos.Id AS Genero
-FROM Filmes
-JOIN FilmesGenero ON Filmes.Id = FilmesGenero.IdFilme
-JOIN Generos ON FilmesGenero.IdGenero = Generos.Id
-
--- 11 
-
-SELECT Filmes.Nome AS Nome, Generos.Id AS Genero
-FROM Filmes
-JOIN FilmesGenero ON Filmes.Id = FilmesGenero.IdFilme
-JOIN Generos ON FilmesGenero.IdGenero = Generos.Id
-WHERE Generos.Nome = 'Mistério';
-
--- 12
-
-SELECT Filmes.Nome AS NomeDoFilme, Atores.PrimeiroNome, Atores.UltimoNome, Papel
-FROM Filmes
-JOIN ElencoFilme ON Filmes.ID = ElencoFilme.IdFilme
-JOIN Atores ON ElencoFilme.IdAtor = Atores.Id;
-
 # DIO - Trilha .NET - Banco de Dados
 www.dio.me
 
@@ -169,3 +89,83 @@ Você deverá criar diversas consultas, com o objetivo de retornar os dados a se
 ## 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
 
 ![Exercicio 12](Imagens/12.png)
+
+## RESPOSTAS 
+
+--1
+SELECT
+     Nome,
+	 Ano,
+From Filmes
+
+-- 2
+
+SELECT * FROM FILMES
+ORDER BY Ano
+
+-- 3
+
+SELECT 
+         Nome,
+		 Ano,
+		 Duracao 
+FROM FILMES
+WHERE ANO = 1985
+
+-- 4
+
+SELECT * FROM Filmes
+WHERE ANO = 1997
+
+-- 5
+
+SELECT * FROM Filmes
+WHERE ANO > 2000
+
+-- 6
+
+SELECT * FROM Filmes
+WHERE Duracao > 100
+ORDER BY duracao ASC;
+
+-- 7 
+
+SELECT ano, COUNT(*)AS Quantidade
+FROM Filmes
+Group BY Ano
+Order by COUNT(*) DESC;
+
+-- 8
+
+SELECT* from Atores
+             
+Where Genero = 'M';
+
+-- 9 
+
+SELECT PrimeiroNome, UltimoNome
+FROM Atores
+WHERE Genero = 'F'
+ORDER BY PrimeiroNome;
+
+-- 10
+
+SELECT Filmes.Nome AS NomeDoFilme, Generos.Id AS Genero
+FROM Filmes
+JOIN FilmesGenero ON Filmes.Id = FilmesGenero.IdFilme
+JOIN Generos ON FilmesGenero.IdGenero = Generos.Id
+
+-- 11 
+
+SELECT Filmes.Nome AS Nome, Generos.Id AS Genero
+FROM Filmes
+JOIN FilmesGenero ON Filmes.Id = FilmesGenero.IdFilme
+JOIN Generos ON FilmesGenero.IdGenero = Generos.Id
+WHERE Generos.Nome = 'Mistério';
+
+-- 12
+
+SELECT Filmes.Nome AS NomeDoFilme, Atores.PrimeiroNome, Atores.UltimoNome, Papel
+FROM Filmes
+JOIN ElencoFilme ON Filmes.ID = ElencoFilme.IdFilme
+JOIN Atores ON ElencoFilme.IdAtor = Atores.Id;
